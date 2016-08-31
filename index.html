@@ -1,0 +1,45 @@
+<html ng-app="app">
+<head lang="en">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Angular UI Layout Demo 2</title>
+
+  <!-- Le css -->
+  <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+  <link rel="stylesheet" type="text/css" href="ui-layout.css"/>
+  <link rel="stylesheet" type="text/css" href="ui-layout-custom.css">
+  <!-- Le javascript -->
+  <script type="application/javascript" src="vendor.js"></script>
+  <script type="application/javascript" src="ui-layout.js"></script>
+  <script type="application/javascript" src="script.js"></script>
+  
+</head>
+<body>
+  <div ng-controller="DemoController">
+    <div class="cloak" ng-if="cloak"></div>
+		  <div ui-layout="{flow: 'row'}" ui-layout-loaded>
+			  <div id="top" ui-layout-container collapsed="layout.top" size="50px">
+				  TOP</div>
+			  <div ui-layout-container>
+				  <div ui-layout="config">
+					  <div ui-layout-container size="100px">LEFT</div>
+					  <div ui-layout-container>
+						  <div ui-layout="{ flow:'row', dividerSize:'12' }">
+							  <div ui-layout-container>
+								  CENTER
+							  </div>
+						  </div>
+					  </div>
+					  <div ui-layout-container collapsed="layout.four" size="100px">
+						  RIGHT
+					  </div>
+				  </div>
+			  </div>
+			  <div id="bottom" ui-layout-container collapsed="layout.bottom"
+				  size="100px">BOTTOM
+				</div>
+			</div>
+		</div>
+</body>
+</html>
